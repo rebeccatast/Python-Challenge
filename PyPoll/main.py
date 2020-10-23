@@ -26,12 +26,12 @@ with open (csvpath, newline='') as csvfile:
         #Calculate Total Number of Votes
         total_votes += 1
 
-        if row[2] not in candidates:
-            candidates.append(row[2])
-            index = candidates.index(row[2])
+        if row[2] not in candidate_list:
+            candidate_list.append(row[2])
+            index = candidate_list.index(row[2])
             total_candidate_votes.append(1)
         else:
-            index = candidates.index(row[2])
+            index = candidate_list.index(row[2])
             total_candidate_votes[index] += 1
 
     #Percent Votes 
@@ -51,8 +51,8 @@ print(f"Election Results")
 print(f"----------------------------------")
 print(f"Total Votes: {total_votes}")
 print(f"----------------------------------")
-for i in range(len(candidates)):
-    print(f"{candidates[i]}: {str(percent_votes[i])} ({str(num_votes[i])})")
+for i in range(len(candidate_list)):
+    print(f"{candidate_list[i]}: {str(percent_votes[i])} ({str(total_candidate_votes[i])})")
 print("--------------------------")
 print(f"Winner: {winning_candidate}")
 print("--------------------------")
@@ -69,8 +69,8 @@ with open (output_file, 'w',) as txtfile:
     txtfile.write(f"Total Votes: {total_votes}\n")
     txtfile.write(f"----------------------------------\n")
     txtfile.write()
-    for i in range(len(candidates)):
-        txtfile.write(f"{candidates[i]}: {str(percent_votes[i])} ({str(num_votes[i])})\n")
+    for i in range(len(candidate_list)):
+        txtfile.write(f"{candidate_list[i]}: {str(percent_votes[i])} ({str(total_candidate_votes[i])})\n")
     txtfile.write(f"----------------------------------\n")
     txtfile.write(f"Winner: {winning_candidate}\n")
     txtfile.write(f"----------------------------------\n")
