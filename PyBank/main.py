@@ -13,7 +13,7 @@ greatest_decrease = 0
 greatest_decrease_month = 0
 
 #Set Path for CSV File
-csvpath = os.path.join ('/' 'Users', 'rebeccatast', 'Desktop', 'Python-Challenge','PyBank', 'Resources', 'bankdata.csv')
+csvpath = os.path.join ('/' 'Users', 'rebeccatast', 'Desktop', 'Python-Challenge', 'PyBank', 'Resources', 'bankdata.csv')
 
 #Open and Read CSV File
 with open (csvpath, newline='') as csvfile:
@@ -26,10 +26,10 @@ with open (csvpath, newline='') as csvfile:
     row = next(csvreader)
 
     #Calculate Total Number of Months, Net Amount of Profit/Loss, and Set Variables for Rows
-    previous_row = int(row(1))
+    first_row = int(row[1])
     total_months += 1
     net_total += 1
-    greatest_increase = int(row(1))
+    greatest_increase = int(row[1])
     greatest_increase_month = row[0]
 
     #Read each row of Data after the header
@@ -42,9 +42,9 @@ with open (csvpath, newline='') as csvfile:
         net_total += int(row[1])
 
         #Calculate Change from month to month
-        revenue_change = int(row[1]) - previous_row
+        revenue_change = int(row[1]) - first_row
         monthly_change.append(revenue_change)
-        previous_row = int(row[1])
+        first_row = int(row[1])
         month_count.append(row[1])
 
         #Calculate the Greatest Increase in Profits and Month
@@ -53,7 +53,7 @@ with open (csvpath, newline='') as csvfile:
             greatest_increase_month = row[0]
 
         #Calculate the Greatest Decrease in Profits and Month
-        if int(row[1]) < greatest_decrease
+        if int(row[1]) < greatest_decrease:
             greatest_decrease = int (row[1])
             greatest_decrease_month = row[0]
 
@@ -74,7 +74,8 @@ print(f"Greatest Increase in Profits:, {greatest_increase_month}, (${highest})")
 print(f"Greatest Decrease in Profits;, {greatest_decrease_month}, (${lowest})")
 
 #Set output file
-output_file = csvpath = os.path.join ('/' 'Users', 'rebeccatast', 'Desktop', 'Python-Challenge','PyBank', 'Analysis', 'budget_data.csv')
+output_file = csvpath = os.path.join ('/' 'Users', 'rebeccatast', 'Desktop', 'Python-Challenge','PyBank', 'Analysis', 'budget_data.txt')
+
 
 #Open File Using Write Mode 
 with open (output_file, 'w',) as txtfile:
