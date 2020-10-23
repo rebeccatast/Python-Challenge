@@ -59,7 +59,7 @@ print("--------------------------")
 
 
 #Set output file
-output_file = csvpath = os.path.join ('/' 'Users', 'rebeccatast', 'Desktop', 'Python-Challenge','PyPoll', 'Analysis', 'poll_data.csv')
+output_file = csvpath = os.path.join ('/' 'Users', 'rebeccatast', 'Desktop', 'Python-Challenge','PyPoll', 'Analysis', 'poll_data.txt')
 
 #Open File Using Write Mode 
 with open (output_file, 'w',) as txtfile:
