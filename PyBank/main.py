@@ -84,7 +84,7 @@ with open (output_file, 'w',) as txtfile:
     txtfile.write(f"----------------------------------\n")
     txtfile.write(f"Total Months: {total_months}\n")
     txtfile.write(f"Total: ${net_total}\n")
-    txtfile.write(f"Average Change: ${average_change}\n")
+    txtfile.write(f"Average Change: ${average_change:.2f}\n")
     txtfile.write(f"Greatest Increase in Profits:, {greatest_increase_month}, (${highest})\n")
     txtfile.write(f"Greatest Decrease in Profits;, {greatest_decrease_month}, (${lowest})\n")
 
