@@ -59,6 +59,7 @@ with open (csvpath, newline='') as csvfile:
 
     #Calculate the Average Change 
     average_change = sum(monthly_change)/len(monthly_change)
+    round(int(average_change),2)
 
     highest = max(monthly_change)
     lowest = min(monthly_change)
