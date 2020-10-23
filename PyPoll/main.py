@@ -44,7 +44,7 @@ with open (csvpath, newline='') as csvfile:
     #Find Winner
     winner = max(total_candidate_votes)
     index = total_candidate_votes.index(winner)
-    winning_candidate = candidates[index]
+    winning_candidate = candidate_list[index]
 
 #Print
 print(f"Election Results")
@@ -68,7 +68,6 @@ with open (output_file, 'w',) as txtfile:
     txtfile.write(f"----------------------------------\n")
     txtfile.write(f"Total Votes: {total_votes}\n")
     txtfile.write(f"----------------------------------\n")
-    txtfile.write()
     for i in range(len(candidate_list)):
         txtfile.write(f"{candidate_list[i]}: {str(percent_votes[i])} ({str(total_candidate_votes[i])})\n")
     txtfile.write(f"----------------------------------\n")
